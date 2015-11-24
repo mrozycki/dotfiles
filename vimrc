@@ -43,7 +43,7 @@ set noexpandtab
 """
 " Start in documents directory by default
 """
-cd $HOME\Documents
+cd $HOME/Documents
 cd %:p:h
 
 """
@@ -68,13 +68,14 @@ let g:airline_powerline_fonts = 1
 let g:airline#extentions#branch#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline_section_b = '%n'
-let g:airline_section_y = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)}'
 let g:airline_section_x = '%{airline#util#wrap(airline#parts#ffenc(),0)}'
+let g:airline_section_y = ''
 let g:airline_section_warning = '%r'
 
 function GetSFName ()
   let sfname = join(split(expand('%f'),'\'),'  ')
-  if match(expand('%f'), '\') == 0 
+  let sfname = join(split(expand('%f'),'/'),'  ')
+  if match(expand('%f'), '\') == 0 || match(expand('%f'), '/')
     return ' '.sfname
   else
     return sfname
@@ -98,7 +99,7 @@ endif
 " Spellcheck
 """
 set spelllang=en_us
-set spell
+set nospell
 
 function SpellcheckToggle()
   if &spell == 1
