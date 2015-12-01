@@ -1,7 +1,6 @@
 set encoding=utf-8
 set backspace=2
 set nocompatible
-execute pathogen#infect()
 let g:go_disable_autoinstall = 1
 
 """
@@ -110,10 +109,10 @@ function SpellcheckToggle()
 endfunction
 
 function SpellcheckLanguageToggle()
-  if &spelllang == "en_gb"
-    set spelllang="pl"
+  if &spelllang == "en_us"
+    set spelllang=pl
   else
-    set spelllang="en_gb"
+    set spelllang=en_us
   end
 endfunction
 
