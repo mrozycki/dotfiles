@@ -4,6 +4,21 @@ set nocompatible
 let g:go_disable_autoinstall = 1
 
 """
+" Vundle
+"""
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tomasr/molokai'
+Plugin 'bling/vim-airline'
+
+call vundle#end()
+filetype plugin indent on
+
+"""
 " Colors
 """
 colorscheme molokai
