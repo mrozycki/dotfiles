@@ -1,5 +1,6 @@
 # General
 bindkey -v # vim keybindings
+unsetopt beep
 
 # Prompt
 autoload -U colors && colors
@@ -7,7 +8,7 @@ export PROMPT="%{$fg_no_bold[blue]%}%d%{$reset_color%} at %{$fg[yellow]%}%M
 %{$fg_no_bold[green]%}%n%{$reset_color%} %# "
 
 # Autocomplete
-autoload -U compinit
+autoload -Uz compinit
 compinit
 setopt COMPLETE_IN_WORD # allow tab completion in the middle of a word
 
